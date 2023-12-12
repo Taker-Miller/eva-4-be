@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Editar Cliente</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    {% if form.errors %}
+      <div class="alert alert-danger" role="alert">
+        Por favor, corrija los errores a continuación.
+      </div>
+    {% endif %}
+    <button type="submit" class="btn btn-primary">Actualizar</button>
+</form>
+
+<a href="{% url 'lista_cliente' %}">Cancelar</a>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Detalle del Auto</h2>
+    <p><strong>Marca:</strong> {{ auto.marca }}</p>
+      <p><strong>Modelo:</strong> {{ auto.modelo }}</p>
+        <p><strong>Color:</strong> {{ auto.color }}</p>
+          <p><strong>Patente:</strong> {{ auto.patente }}</p>
+        <p><strong>Precio:</strong> ${{ auto.precio }}</p>
+      <p><strong>Número de Ruedas:</strong> {{ auto.numero_de_ruedas }}</p>
+
+  <a href="{% url 'editar_auto' auto.pk %}">Editar</a> |
+  <a href="{% url 'eliminar_auto' auto.pk %}">Eliminar</a> |
+  <a href="{% url 'lista_auto' %}">Volver a la lista</a>
+{% endblock %}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Autos, Clientes y Sucursales</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      background-color: #580367;
+      color: #fff;
+      padding: 10px 20px;
+      text-align: center;
+    }
+    main {
+      flex: 1;
+      padding: 20px;
+    }
+    footer {
+      background-color: #580367;
+      color: #fff;
+      text-align: center;
+      padding: 10px 20px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-right: 15px;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      width: 80%;
+      margin: auto;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="{% url 'lista_auto' %}">Autos</a>
+      <a href="{% url 'agregar_auto' %}">Agregar Auto</a>
+      <a href="{% url 'lista_cliente' %}">Clientes</a>
+      <a href="{% url 'agregar_cliente' %}">Agregar Cliente</a>
+      <a href="{% url 'lista_sucursal' %}">Sucursales</a> 
+      <a href="{% url 'agregar_sucursal' %}">Agregar Sucursal</a>
+      <a href="/api/">API</a>
+    </nav>
+  </header>
+  
+  <main class="container">
+    {% block content %}
+    {% endblock %}
+  </main>
+  
+  <footer>
+    <p>&copy; 2023 Gestión de Autos, Clientes y Sucursales</p>
+  </footer>
+</body>
+</html>

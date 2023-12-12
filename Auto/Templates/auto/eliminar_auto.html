@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Eliminar Auto</h2>
+  <p>Estás seguro que deseas eliminar {{ auto.marca }} {{ auto.modelo }} con patente {{ auto.patente }}?</p>
+  
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Eliminar</button>
+  </form>
+  <a href="{% url 'lista_auto' %}">Cancelar</a>
+{% endblock %}
